@@ -1,13 +1,13 @@
-# Database Model voor het Video Game History Foundation (VGHF): Een Uitgebreide Analyse
+# Database Model voor het Video Game History Foundation (VGHF): Een Korte Bespreking
 
-In de dynamische en snel evoluerende wereld van videogames speelt het behoud van de rijke geschiedenis van deze digitale cultuur een centrale rol. Het Video Game History Foundation (VGHF), als non-profitorganisatie, heeft als missie het behouden en delen van videogames en aanverwante materialen. Een cruciaal instrument in het verwezenlijken van deze missie is een goed doordacht database model. In dit verslag wordt het voorgestelde model voor het VGHF uitvoerig geanalyseerd, met de nadruk op de verschillende entiteiten, attributen en relaties, en waarom deze van onschatbare waarde zijn voor de organisatie.
+Het Video Game History Foundation (VGHF), als non-profitorganisatie, heeft als missie het bewaren en het delen van videogames en aanverwante materialen. Een cruciaal instrument in het verwezenlijken van deze missie is een goed doordacht database model. In deze korte bespreking wordt het voorgestelde model voor het VGHF geanalyseerd met de nadruk op de verschillende entiteiten en hun attributen. Ook wordt besproken welk nut de onderlinge relaties tussen de verschillende entiteiten kunnen hebben voor de organisatie.
 
 ## Entiteiten en Attributen:
 
 ### 1. Game:
-   - **Attributen:** GameID, Titel, Platform, Genre, Formaat, MuseumID, MagazijnID, Prijs.
+- **Attributen:** gameID, title, format, genre, platform, museumID, warehouseID, price.
 
-   De "Game" entiteit vormt het hart van de database en bevat cruciale informatie over individuele videogames. Door attributen zoals "MuseumID" en "MagazijnID" toe te voegen, kan het VGHF gemakkelijk de huidige locatie van een game traceren, of deze nu tentoongesteld wordt in een museum of opgeslagen in een magazijn. Het attribuut "Prijs" verschaft informatie over de kosten van de game.
+De "Game" entiteit vormt het hart van de database en bevat cruciale informatie over individuele videogames. Door attributen zoals "MuseumID" en "MagazijnID" toe te voegen, kan het VGHF gemakkelijk de huidige locatie van een game traceren, of deze nu tentoongesteld wordt in een museum of opgeslagen in een magazijn. Het attribuut "Prijs" verschaft informatie over de kosten van de game.
 
 ### 2. Attribuut:
    - **Attributen:** AttribuutID, Naam, Categorie, MuseumID, MagazijnID, Prijs, Beschrijving.
