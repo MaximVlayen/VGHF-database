@@ -1,5 +1,7 @@
 # Database Model voor het Video Game History Foundation (VGHF): Een Korte Bespreking
 
+## Inleiding
+
 Het Video Game History Foundation (VGHF), als non-profitorganisatie, heeft als missie het bewaren en het delen van videogames en aanverwante materialen. Een cruciaal instrument in het verwezenlijken van deze missie is een goed doordacht database model. In deze korte bespreking wordt het voorgestelde model voor het VGHF geanalyseerd met de nadruk op de verschillende entiteiten en hun attributen. Ook wordt besproken welk nut de onderlinge relaties tussen de verschillende entiteiten kunnen hebben voor de organisatie.
 
 ## Entiteiten en Attributen:
@@ -7,27 +9,27 @@ Het Video Game History Foundation (VGHF), als non-profitorganisatie, heeft als m
 ### 1. Game:
 - **Attributen:** gameID, title, format, genre, platform, museumID, warehouseID, price.
 
-De "Game" entiteit vormt het hart van de database en bevat cruciale informatie over individuele videogames. Door attributen zoals "MuseumID" en "MagazijnID" toe te voegen, kan het VGHF gemakkelijk de huidige locatie van een game traceren, of deze nu tentoongesteld wordt in een museum of opgeslagen in een magazijn. Het attribuut "Prijs" verschaft informatie over de kosten van de game.
+De "Game" entiteit vormt het hart van de database en bevat alle informatie over individuele videogames. Door attributen zoals "museumID" en "warehouseID" toe te voegen, kan het VGHF gemakkelijk de huidige locatie van een game terugvinden, of deze nu tentoongesteld wordt in een museum of opgeslagen ligt in een magazijn. Het attribuut "format" geeft informatie over het formaat van de game in kwestie bijvoorbeeld "in cartridge", "CD" of "digitaal formaat". Het attribuut "prijs" verschaft informatie over de kosten van de game.
 
-### 2. Attribuut:
-   - **Attributen:** AttribuutID, Naam, Categorie, MuseumID, MagazijnID, Prijs, Beschrijving.
+### 2. Collectible:
+- **Attributen:** collectibleID, name, description, category, museumID, warehouseID, price.
 
-   De "Attribuut" entiteit bevat details over de diverse kenmerken van games. De toevoeging van attributen zoals "Naam", "Categorie", "MuseumID", en "MagazijnID" stelt het VGHF in staat om gedetailleerde informatie over games vast te leggen. Het attribuut "Prijs" biedt informatie over de kosten van het attribuut, terwijl "Beschrijving" aanvullende details verschaft.
+De "Collectible" entiteit bevat details over de verschillende aanverwante materialen aan videogames. Ook hier zorgen de attributen "museumID", en "warehouseID" er voor dat het VGHF in staat is om de huidige locatie van een collectible makkelijk teerug te vinden. Het attribuut "category" van een collectible geeft aan onder welke categorie de collectible valt bijvoorbeeld "magazines", "props" of "guides".
 
 ### 3. Museum:
-   - **Attributen:** MuseumID, Naam, Locatie, Toegangsprijs, Aantal Bezoekers (jaarlijks), Opbrengst (jaarlijks).
+- **Attributen:** museumID, name, location, ticket, visitorAmount, revenue.
 
-   De "Museum" entiteit biedt informatie over de musea die door het VGHF worden beheerd. Attributen zoals "Toegangsprijs", "Aantal Bezoekers" en "Opbrengst" verschaffen inzicht in de financiële en bezoekersgegevens van elk museum.
+De "Museum" entiteit geeft informatie over de musea die door het VGHF worden beheerd. Op die manier wil het VGHF videogames en hun cultuur en geschiedenis tentoonstellen aan het publiek. De attributen "ticket", "visitorAmount" en "revenue" verschaffen respectievelijk inzicht in de toegangsprijs, het bezoekersaantal (op jaarlijkse basis) en de opbrengst (ook op jaarlijkse basis) van elk museum.
 
-### 4. Magazijn:
-   - **Attributen:** MagazijnID, Locatie, Capaciteit.
+### 4. Warehouse:
+- **Attributen:** warehouseID, location, capacity.
 
-   De "Magazijn" entiteit beheert de opslagplaatsen voor de games. Het attribuut "Capaciteit" geeft aan hoeveel games een magazijn kan bevatten. Dit is essentieel voor het efficiënt beheren van de opslagruimte.
+De "Warehouse" entiteit beheert de opslagplaatsen voor de games. Het attribuut "capacity" geeft aan hoeveel games en collectibles een magazijn maximaal kan bevatten. Het VGHF kan hier efficiënt gebruik van maken om bij te houden hoeveel plaats er nog vrij is in een opslagplaats.
 
-### 5. Bedrijf:
-   - **Attributen:** BedrijfID, Naam, Email.
+### 5. Company:
+- **Attributen:** companyID, name, email.
 
-   De "Bedrijf" entiteit vertegenwoordigt externe entiteiten die betrokken zijn bij het hergebruik van games. Het attribuut "Email" vergemakkelijkt communicatie met deze bedrijven en bevordert samenwerking.
+De "Bedrijf" entiteit vertegenwoordigt externe entiteiten die betrokken zijn bij het hergebruik van games. Het attribuut "Email" vergemakkelijkt communicatie met deze bedrijven en bevordert samenwerking.
 
 ### 6. GameAttribuut:
    - **Attributen:** GameID, AttribuutID.
@@ -41,16 +43,14 @@ De "Game" entiteit vormt het hart van de database en bevat cruciale informatie o
 
 ## Nut van de Entiteiten en Relaties:
 
-### 1. Traceerbaarheid van Games:
-   De relaties met "MuseumID" en "MagazijnID" in de "Game" entiteit verschaffen de mogelijkheid om de locatie van elke individuele game eenvoudig te traceren. Dit vergemakkelijkt het beheer van uitleenstatussen, tentoonstellingsplanning en minimaliseert het risico op verlies of diefstal.
+### 1. Traceerbaarheid van Games en Collectibles:
+De relaties met "museumID" en "warehouseID" in de "Game" en "Collectible" entiteiten verschaffen de mogelijkheid om de locatie van elke individuele game of collectible eenvoudig te traceren. Dit vergemakkelijkt het beheer van uitleenstatussen, tentoonstellingsplanning en minimaliseert het risico op verlies.
 
 ### 2. Attributen van Games en Efficiënt Hergebruik:
-   De entiteit "Attribuut" maakt het mogelijk gedetailleerde kenmerken van games vast te leggen. Dit is cruciaal voor het categoriseren van games en het identificeren van specifieke eigenschappen die van belang kunnen zijn voor hergebruiksaanvragen van bedrijven.
+De entiteit "Attribuut" maakt het mogelijk gedetailleerde kenmerken van games vast te leggen. Dit is cruciaal voor het categoriseren van games en het identificeren van specifieke eigenschappen die van belang kunnen zijn voor hergebruiksaanvragen van bedrijven.
 
 ### 3. Financieel Beheer van Musea:
-   De entiteit "Museum" bevat cruciale financiële informatie zoals "Toegangsprijs", "Aantal Bezoekers" en "Opbrengst". Door deze gegevens bij te houden, kan het VGHF het financiële succes van elk museum evalueren en strategieën ontw
-
-ikkelen om de opbrengst te maximaliseren.
+   De entiteit "Museum" bevat cruciale financiële informatie zoals "Toegangsprijs", "Aantal Bezoekers" en "Opbrengst". Door deze gegevens bij te houden, kan het VGHF het financiële succes van elk museum evalueren en strategieën ontwikkelen om de opbrengst te maximaliseren.
 
 ### 4. Efficiënt Magazijnbeheer:
    Het attribuut "Capaciteit" in de "Magazijn" entiteit stelt het VGHF in staat om de beschikbare opslagruimte te beheren. Hierdoor kunnen ze anticiperen op toekomstige behoeften, tijdig uitbreiden indien nodig, en de algehele efficiëntie van het magazijnbeheer verbeteren.
