@@ -31,15 +31,9 @@ De "Warehouse" entiteit beheert de opslagplaatsen voor de games. Het attribuut "
 
 De "Company" entiteit vertegenwoordigt alle bedrijven die betrokken zijn bij het VGHF o.a. door het hergebruiken en restaureren van games. Het attribuut "Email" vergemakkelijkt communicatie met deze bedrijven en bevordert samenwerking.
 
-### 6. GameAttribuut:
-   - **Attributen:** GameID, AttribuutID.
+### 6. Koppeltabellen:
+In SQL is het niet mogelijk om rechtstreek veel-op-veel relaties tussen verschillende entiteiten te leggen. Daarom worden er eerste koppeltabellen aangemaakt waarmee de betrokken entiteiten een één-op-veel relatie hebben. De veel-op-veel relaties in dit model bevinden zich tussen "Game" en "Collectible" en tussen "Game" en "Company". De koppeltabellen tussen deze entiteiten zijn daarom respectievelijk "GameCollectibleRelation", aangezien het hier gaat om de relatie tussen beide en "GameCompanyRecovery", omdat het hergebruik van de games door de bedrijven hier wordt bijgehouden.  
 
-   De "GameAttribuut" entiteit fungeert als een associatieve entiteit die de vele-op-vele-relatie tussen games en attributen mogelijk maakt. Hierdoor kunnen meerdere attributen aan een game worden gekoppeld en vice versa.
-
-### 7. GameBedrijf:
-   - **Attributen:** GameID, BedrijfID.
-
-   De "GameBedrijf" entiteit is een associatieve entiteit die de vele-op-vele-relatie tussen games en bedrijven mogelijk maakt. Hierdoor kunnen meerdere bedrijven aan een game worden gekoppeld en vice versa.
 
 ## Nut van de Relaties tussen Entiteiten:
 
