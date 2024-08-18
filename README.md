@@ -1,0 +1,20 @@
+
+Volgens de website van het VGHF (Video Game History Foundation) wordt de geschiedenis van video games veel te weinig educatief aan bod gebracht in vergelijking met muziek en film/TV. Daar wilt het verandering in brengen door gratis pop-up exposities te organiseren. Het doel: de wereld opnieuw enthousiast te maken voor video game geschiedenis! Hierin stellen zij delen van hun archief tentoon (bv per genre) aan het publiek. Een expositie gebeurt steeds op een vooraf bepaalde plaats en van een zekere startdatum tot een zeker einddatum. De expo’s zijn dus gratis (want we love free education!) maar bezoekers moeten wel hun ticket reserveren. Een bezoeker kan maximum 4 tickets reserveren zolang er nog beschikbaar zijn, want een expo kan maar een aantal bezoekers per dag ontvangen. Bezoekers krijgen hun gereserveerde ticketen dan via email gestuurd.
+Op de expo’s werkt ook personeel. Gidsen, security en de kuisploeg. Zij worden uitbetaald volgens hun uurloon en hun shiften worden op voorhand bepaald maar kunnen dagelijks veranderen. Een medewerker kan natuurlijk nooit op verschillende expo’s tegelijk werken!
+De database hiervoor is opgebouwd uit 6 tabellen en 5 relaties.
+De eerste tabel is voor de exposities. De tabel heeft een id en een naam om de expositie makkelijke te identificeren. Daarnaast heeft een expositie ook een zeker adres, waar het doorgaat van een zekere begindatum tot een zekere einddatum. De tabel bevat ook een kolom max_tickets. Die geeft aan hoeveel tickets er maximaal kunnen gererserveerd worden per dag zodat het niet overbevolkt wordt en de veiligheid gegarandeerd kan worden.
+De tweede tabel is die van de bezoekers. Elke bezoeker heeft een id en een voor- en achternaam om de bezoeker snel te identificeren. Elke bezoeker dient ook zijn emailadres te voorzien om eventueel gereserveerde tickets te kunnen ontvangen. De kolom leeftijd is optioneel maar kan interessant zijn voor een optionele demografie later.
+Aangezien een bezoeker meerdere exposities kan bezoeken en een expositie meerdere bezoekers kan ontvangen spreken we van een veel-op-veel relatie. Daarom is de reservatie tabel als derde tabel een soort koppeltabel voor deze twee voorgaande tabellen. De reservatie tabel houdt alle reservaties bij. Een reservatie bestaat uit een id, een bezoeker die de reservatie gemaakt heeft, een expositie waar de bezoeker heen gaat, het aantal tickets dat de bezoeker gereserveerd heeft (met een maximum van 4) en de datum waarvoor de bezoeker gereserveerd heeft.
+De vierde tabel is voor het personeel. Ieder personeelslid heeft een id, een voor- en achternaam, een emailadres en een leeftijd. Via de leeftijd kan ook nagekeken worden of het personeelslid in kwestie wel oud genoeg is om te werken. 
+Elk personeelslid heeft ook zijn eigen job. Al die verschillende jobs zijn opgelijst in een aparte tabel namelijk ‘Beroep’, de vijfde tabel. Elk beroep heeft een id die aan één of meer personeelsleden kan toegewezen worden. Het gaat om een één-op-veel relatie dus. Verder heeft elk beroep ook zijn eigen naam en zijn eigen uurloon. 
+Tussen het personeel en de exposities bestaat ook een veel-op-veel relatie want op een expositie werken vaak meerdere personeelsleden en een personeelslid kan ook op meerdere exposities werken (maar nooit tegelijk!).
+De zesde en laatste tabel is daarom opnieuw een soort koppeltabel tussen die beide tabellen. Dit is de shift tabel. Het houdt elke shift bij die een personeelslid moet doen op een expositie door beide id’s te linken aan elkaar. Daarnaast houdt het ook de datum bij waarop de shift plaatsvindt met een begin- en einduur om de werkuren bij te houden.
+Dit database model is ook handig omdat het niet gelimiteerd is tot het VGHF. Het zou ook gebruikt kunnen worden voor andere bedrijven die exposities organiseren! 
+Indien het VGHF zou beschikken over een bestaande database van alle items in hun archief, zou met een simpele veel-op-veel relatie die database gelinkt kunnen worden aan deze expositie database. Bijvoorbeeld via een koppeltabel ‘Collectie’ zou dan kunnen worden bijgehouden welke items in welke expositie staan door beide id’s aan elkaar te linken.
+
+
+
+
+
+
+
